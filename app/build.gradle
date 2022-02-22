@@ -56,9 +56,11 @@ dependencies {
     implementation "androidx.recyclerview:recyclerview-selection:1.1.0"
 
     // Fragment & navigation framework libraries
-    implementation 'androidx.fragment:fragment:1.4.0'
+    implementation 'androidx.fragment:fragment:1.4.1'
     implementation "androidx.navigation:navigation-fragment:$navigationVersion"
     implementation "androidx.navigation:navigation-ui:$navigationVersion"
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
 
     // Lifecycle (LiveData and ViewModel) libraries
     def lifecycleVersion = '2.4.0'
@@ -78,6 +80,7 @@ dependencies {
     def roomVersion = '2.4.0'
     implementation "androidx.room:room-runtime:$roomVersion"
     annotationProcessor "androidx.room:room-compiler:$roomVersion"
+    //noinspection GradleDependency
     implementation "androidx.room:room-rxjava3:$roomVersion"
 
     // Gson (Google JSON parser) library
@@ -165,9 +168,6 @@ android.applicationVariants.all { variant ->
 
 }
 
-String getLocalProperty(String name) {
-    return getProperty("$projectDir/local.properties", name)
-}
 
 static String getProperty(String filename, String name) {
     Properties properties = new Properties()
