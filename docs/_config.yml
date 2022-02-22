@@ -1,4 +1,4 @@
-remote_theme: ddc-java/ddc-day
+remote_theme: ddc-java/ddc-day # remove this line if changing theme
 repository_links:
   enabled: false
 page_navigator:
