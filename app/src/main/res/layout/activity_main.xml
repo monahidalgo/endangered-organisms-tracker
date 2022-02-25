@@ -41,7 +41,7 @@
             android:layout_width="409dp"
             android:layout_height="279dp"
             android:id="@+id/bottomNavigationView"
-            tools:layout_editor_absoluteY="451dp" tools:layout_editor_absoluteX="1dp">
+            tools:layout_editor_absoluteY="393dp" tools:layout_editor_absoluteX="2dp">
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
