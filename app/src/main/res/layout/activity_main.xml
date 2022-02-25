@@ -5,43 +5,44 @@
         xmlns:tools="http://schemas.android.com/tools" android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingTop="?attr/actionBarSize" tools:visibility="visible">
+        android:paddingTop="?attr/actionBarSize" tools:visibility="visible" android:backgroundTint="#A72424"
+        android:background="#C72C2C" android:foregroundTint="#A59393">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/nav_view"
-            android:layout_width="411dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="?android:attr/windowBackground"
-            app:menu="@menu/bottom_nav_menu" tools:layout_editor_absoluteY="675dp"/>
+            app:menu="@menu/bottom_nav_menu"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
-    <fragment
-            android:id="@+id/nav_host_fragment_activity_main"
-            android:name="androidx.navigation.fragment.NavHostFragment"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            app:defaultNavHost="true"
-            app:navGraph="@navigation/mobile_navigation"
-            tools:layout_editor_absoluteY="168dp"/>
-    <TextView
-            android:text="@string/sign_in"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/endangered_organisms_tracker"
-            tools:text="sign in" android:background="#E91E63"
-            android:clickable="true" android:autoSizeTextType="none"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            android:minHeight="48dp"
-            android:textColor="#EBF2EB"
-            tools:layout_editor_absoluteX="156dp" app:layout_constraintTop_toTopOf="parent"/>
     <androidx.constraintlayout.widget.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
                                                 android:id="@+id/guideline2"
                                                 android:orientation="vertical"
-                                                app:layout_constraintGuide_end="390dp"/>
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:layout_width="409dp"
-            android:layout_height="279dp"
-            android:id="@+id/bottomNavigationView"
-            tools:layout_editor_absoluteY="393dp" tools:layout_editor_absoluteX="2dp">
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
+                                                app:layout_constraintGuide_begin="16dp"
+                                                app:layout_constraintTop_toTopOf="parent"
+                                                android:layout_marginTop="56dp" android:layout_marginBottom="26dp"
+                                                app:layout_constraintBottom_toTopOf="@+id/recyclerView"/>
+    <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:id="@+id/recyclerView" app:layout_constraintTop_toBottomOf="@+id/guideline2"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    <TextView
+            android:text="@string/endangered_organisms_tracker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" android:id="@+id/textView2"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="16dp"
+            app:layout_constraintHorizontal_bias="0.497" android:textColor="#FFC400"
+            android:drawableEnd="@drawable/ic_home_black_24dp"/>
+    <ImageView
+            android:layout_width="123dp"
+            android:layout_height="115dp" app:srcCompat="@android:mipmap/sym_def_app_icon"
+            android:id="@+id/imageView" tools:layout_editor_absoluteY="96dp"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            android:contentDescription="@string/image"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
